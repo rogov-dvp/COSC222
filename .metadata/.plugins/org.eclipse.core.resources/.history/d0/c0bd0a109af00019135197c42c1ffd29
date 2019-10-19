@@ -1,0 +1,67 @@
+package question3;
+
+public class LinkedListCircularQueue<T> implements QueueADT<T> {
+	private Node<T> front = new Node<T>(null, null);
+	private Node<T> tail = new Node<T>(null,null);
+	private int counter;
+	// Creates an empty queue.
+	public LinkedListCircularQueue() {
+	}
+
+	// Adds the specified element to the rear of the queue
+	@Override
+	public void enqueue(T element) {
+		Node<T> newNode = new Node<T>(element, null);
+		if(isEmpty()) {								
+			newNode.setNext(newNode);				//set element to point to itself, since its alone
+			front = newNode;						//front equals newNode
+			tail = newNode;							//tail equals newNode	
+		} else if (size() == 1) 
+			front.setNext(newNode);					//if only one, we must change front.next to newNode
+					
+		tail.setNext(newNode);						//set tail.next to newNode		
+		tail = newNode;								//set tail to newNode
+		newNode.setNext(front);						//set newNode.next to front
+		counter++;									//increment counter
+	}
+
+	// Removes the element at the front of the queue and returns a reference to it.
+	@Override
+	public T dequeue() {
+		T result = front.getBook();					//The book which we need
+		Node<T> temp = front.getNext();				//temp = front.next
+		front.setNext(null);						//delete node from queue
+		front = temp;								//make a new front
+		return result;
+		counter--;
+	}
+
+	// Returns without removing the element at the front of the queue
+	@Override
+	public T first() {
+		return front.getBook();
+	}
+
+	// Returns true if the queue contains no elements
+	@Override
+	public boolean isEmpty() {
+		return counter==0;			//or front == null;   
+	}
+
+	// Returns the number of elements in the queue
+	@Override
+	public int size() {
+		return counter;
+	}
+
+	// Returns a string representation of the queue
+	public String toString() {
+		String str = "";
+		Node<T> pointer = front;
+		for(int i = 0; i<counter;i++) {
+			str = str + pointer.toString();
+			pointer = pointer.getNext();
+		}
+		return str;
+	}
+}

@@ -1,0 +1,36 @@
+package lab1;
+
+import java.util.*;
+import java.util.Scanner;
+
+public class PhoneBook {
+	public static void main(String[] args) {
+
+	
+		String nameCorrect = "Valid Name";
+		String nameWrong = "Invalid Name";
+		String phoneCorrect = "Valid Phone Number";
+		String phoneWrong = "Invalid Phone Number";
+		String bothCorrect = "Valid Name and Phone Number";
+		String bothWrong = "Invalid Name and Phone Number";
+		
+		String input = "<name>Big_Show</name><phone>250-899-6192</phone>";
+		
+		boolean nameCondition = false;
+		boolean phoneCondition = false;
+
+		System.out.println(input.indexOf("<name>"));
+
+		
+		
+	}
+	
+//	public boolean nameCheck(String name) {
+//		name.indexOf("<name>");
+//	}
+//	
+//	public boolean phoneCheck() {
+//		
+//	}
+//	
+}

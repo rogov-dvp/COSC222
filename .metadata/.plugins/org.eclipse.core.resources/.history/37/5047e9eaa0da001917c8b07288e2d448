@@ -1,0 +1,100 @@
+package lab1;
+
+public class PhoneBook {
+	public static void main(String[] args) {
+
+		String nameWrong = "Invalid Name";
+		String phoneWrong = "Invalid Phone Number";
+		String bothCorrect = "Valid Name and Phone Number";
+		String bothWrong = "Invalid Name and Phone Number";
+
+		String input = "Big_Show</name><phone>250-899-6192</phone>John+Doe</name><phone>250-899-7525</phone>";
+
+		int startString = 0;
+		int endString = 0;
+		int lengthInput = input.length();
+		while (startString != -1) { // When there are no more contacts, it will go into -1
+			startString = input.indexOf("<name>");
+			endString = input.indexOf("<phone>");
+			String subString = input.substring(startString, endString);
+			boolean nameCondition = nameCheck(subString);
+			boolean phoneCondition = phoneCheck(subString);
+			System.out.println(subString);
+
+			if (nameCondition == true && phoneCondition == true) // name and phone correct; statement
+				System.out.println(bothCorrect);
+			else if (nameCondition == false && phoneCondition == false) // name and phone wrong; statement
+				System.out.println(bothWrong);
+			else if (nameCondition == true && phoneCondition == false) // phone wrong; statement
+				System.out.println(phoneWrong);
+			else // name wrong; statement
+				System.out.println(nameWrong);
+
+		}
+
+	}
+
+	public static boolean nameCheck(String name) {
+		boolean valid = true;
+		int startString = 0;
+		int endString = 0;
+
+		startString = name.indexOf("<name>") + 6; // +6 because we begin counting the letters after "<name>...."
+		endString = name.indexOf("</name>");
+
+		for (int i = startString; i < endString; i++) { // <name>.....searches......</name>
+			int c = name.charAt(i); // compares every character between the two tags against the "if" condition
+									// below
+
+			// not between a-z, nor A-Z, OR '_' at start of name, NOR '_' later in the name.
+			// 97='a', 122='z', 65='A', 90='Z', 95='_'
+			if (!((c >= 97) && (c <= 122)) || !((c >= 65) && (c <= 90)) || ((c == 95) && (i == startString))
+					|| !((c == 95) && (i > startString))) {
+				valid = false;
+				break;
+			}
+		}
+		return valid;
+	}
+
+	public static boolean phoneCheck(String phone) {
+		boolean valid = true;
+		int startString = 0;
+		int endString = 0;
+
+		startString = phone.indexOf("<phone>") + 6;
+		endString = phone.indexOf("</phone>");
+
+		int length = endString - startString + 6;
+
+		for (int i = startString; i < endString; i++) { // <phone>.....searches......</phone>
+
+			int c = phone.charAt(i);
+			//trust me, it works ;)
+			if (length == 14) {
+				if (!((c == '+') && (i == startString)) || !((c >= 0 || c <= 9) && (i == startString + 1
+						|| i == startString + 3 || i == startString + 4 || i == startString + 5 || i == startString + 7
+						|| i == startString + 8 || i == startString + 9 || i == startString + 11
+						|| i == startString + 12 || i == startString + 13 || i == startString + 14))
+						&& !((c == '-') && (i == startString + 2 || i == startString + 6 || i == startString + 10))) {
+					valid=false;
+					break;
+				}
+			} else if (length == 11) {
+				if(((c == '+') && (i == startString)) || !((c >= 0 || c <= 9) && (i == startString
+						|| i == startString + 1 || i == startString + 2 || i == startString + 4 || i == startString + 5
+						|| i == startString + 6 || i == startString + 8 || i == startString + 9
+						|| i == startString + 10)) && !((c == '-') && (i == startString + 3 || i == startString + 7))) {
+					valid=false;
+					break;
+				}
+			} else {
+				valid = false;
+				break;
+			}
+
+		}
+		return valid;
+	}
+
+}

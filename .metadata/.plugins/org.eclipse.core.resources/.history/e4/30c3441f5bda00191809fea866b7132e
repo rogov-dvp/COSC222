@@ -1,0 +1,12 @@
+package lab1;
+
+public class PhoneBook {
+	public static void main(String[] args) {
+		String name = "";
+		
+		
+		
+		
+		System.out.println("<name>"+ name +"</name>" + "<phone>" + phoneNum + "</phone>");
+	}
+}

@@ -1,0 +1,36 @@
+package question2;
+
+public class Node<T> {
+
+	private T book;
+	private Node<T> next;
+
+	public Node(String name, String author, double price, Node<T> next) {
+		setBook(book);
+		setNext(next); 
+	}
+
+	
+	public T getBook() {
+		return book;
+	}
+
+
+	public void setBook(T book) {
+		this.book = book;
+	}
+
+	public Node<T> getNext() {
+		return next;
+	}
+
+
+	public void setNext(Node<T> next) {
+		this.next = next;
+	}
+
+
+	public String toString() {
+		return book.toString();
+	}
+}

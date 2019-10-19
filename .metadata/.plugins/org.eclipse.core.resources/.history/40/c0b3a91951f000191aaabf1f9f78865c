@@ -1,0 +1,71 @@
+package question1;
+
+public class Book implements StackADT<Book>{
+	String name;
+	String author;
+	int price;
+
+	public Book(String name, String author, int price) {
+		this.name = name;
+		this.author = author;
+		this.price = price;
+	}
+
+	public void setName() {
+		this.price = price;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAuthor() {
+		this.author = author;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	public void setPrice() {
+		this.price = price;
+	}
+	public int getPrice() {
+		return price;
+	}
+	
+	public String toString() {
+		return "";		//need to finish
+	}
+
+	@Override
+	public void push(Book element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Book pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Book peek() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

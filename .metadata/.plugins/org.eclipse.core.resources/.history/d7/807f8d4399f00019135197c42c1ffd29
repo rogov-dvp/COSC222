@@ -1,0 +1,56 @@
+package question3;
+
+public class LinkedListCircularQueue<T> implements QueueADT<T> {
+	private Node<T> front = new Node<T>(null, null);
+	private Node<T> tail = new Node<T>(null,null);
+	private int counter;
+	// Creates an empty queue.
+	public LinkedListCircularQueue() {
+	}
+
+	// Adds the specified element to the rear of the queue
+	@Override
+	public void enqueue(T element) {
+		Node<T> newNode = new Node<T>(element, null);
+		if(isEmpty()) {								
+			newNode.setNext(newNode);				//set element to point to itself, since its alone
+			front = newNode;						//front equals newNode
+			tail = newNode;							//tail equals newNode	
+		} else if (size() == 1) 
+			front.setNext(newNode);					// if only one, we must change front.next to newNode
+					
+		tail.setNext(newNode);						//set tail.next to newNode		
+		tail = newNode;								//set tail to newNode
+		newNode.setNext(front);						//set newNode.next to front
+		counter++;									//increment counter
+	}
+
+	// Removes the element at the front of the queue and returns a reference to it.
+	@Override
+	public T dequeue() {
+		
+	}
+
+	// Returns without removing the element at the front of the queue
+	@Override
+	public T first() {
+
+	}
+
+	// Returns true if the queue contains no elements
+	@Override
+	public boolean isEmpty() {
+		return counter==0;			// front = null;   
+	}
+
+	// Returns the number of elements in the queue
+	@Override
+	public int size() {
+		return counter;
+	}
+
+	// Returns a string representation of the queue
+	public String toString() {
+
+	}
+}

@@ -1,0 +1,22 @@
+package question2;
+
+public class Node<T> {
+
+	private String name;
+	private String author;
+	private double price; 			//double since test class uses double values
+	
+
+	public Node(String name, String author, double price) {
+		
+	}
+
+	public Node<T> getNode() {
+		return node;
+	}
+
+	public void setNode(Node<T> node) {
+		this.node = node;
+	}
+
+}

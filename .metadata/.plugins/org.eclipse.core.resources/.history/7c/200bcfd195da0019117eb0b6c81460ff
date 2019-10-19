@@ -1,0 +1,57 @@
+package lab1;
+
+import java.util.*;
+import java.util.Scanner;
+
+public class PhoneBook {
+	public static void main(String[] args) {
+
+	
+		String nameCorrect = "Valid Name";
+		String nameWrong = "Invalid Name";
+		String phoneCorrect = "Valid Phone Number";
+		String phoneWrong = "Invalid Phone Number";
+		String bothCorrect = "Valid Name and Phone Number";
+		String bothWrong = "Invalid Name and Phone Number";
+		
+		String input = "Big_Show</name><phone>250-899-6192</phone>John+Doe</name><phone>250-899-7525</phone>";
+		
+		boolean nameCondition = false;
+		boolean phoneCondition = false;
+
+		int c = 'Z';
+
+		System.out.println(c);
+		System.out.println(input.indexOf("<name>"));
+		
+		
+	}
+	
+	public boolean nameCheck(String name) {
+		boolean valid = false;
+		int startString = 0;
+		int endString = 0;
+	
+	while(startString != -1) {												//For entire phonebook
+		startString = name.indexOf("<name>");
+		endString = name.indexOf("</name>");
+		
+		for(int i = startString+6; i<endString; i++) {						//For each line
+			int c = name.charAt(i);	
+			if(!((c >= 97) && (c<=122)) || !((c >= 65)&&()))
+		}
+		
+	}
+	return valid;
+		
+	}
+
+	
+	
+	public boolean phoneCheck() {
+	
+		
+		return true;
+	}
+	
+}

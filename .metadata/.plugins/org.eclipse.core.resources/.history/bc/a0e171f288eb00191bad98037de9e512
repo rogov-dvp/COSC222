@@ -1,0 +1,7 @@
+package question1;
+
+public class q1 {
+	public static void main(String[] args) {
+		//Show that n^2 + 10 is O(n^2)
+	}
+}

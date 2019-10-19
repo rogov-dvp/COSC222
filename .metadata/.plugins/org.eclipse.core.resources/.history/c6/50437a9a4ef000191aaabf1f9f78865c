@@ -1,0 +1,58 @@
+package question1;
+public class ArrayStack<T> implements StackADT<T> {
+
+	private final int DEFAULT_CAPACITY = 1;
+
+	// Creates an empty stack using the default capacity.
+	public ArrayStack() {
+
+	}
+
+	// Creates an empty stack using the specified capacity.
+	public ArrayStack(int initialCapacity) {
+
+	}
+
+	// Adds a specified element to the top of the stack and expands the capacity, if
+	// needed
+	@Override
+	public void push(T element) {
+
+	}
+
+	// Removes the element at the top of the stack and returns a reference to it.
+	@Override
+	public T pop() {
+
+	}
+
+	// Returns the top item
+	@Override
+	public T peek() {
+
+	}
+
+	// Returns true if the stack is empty and false otherwise
+	@Override
+	public boolean isEmpty() {
+
+	}
+
+	// Returns the number of elements in the stack
+	@Override
+	public int size() {
+
+	}
+
+	// Returns a string representation of this stack.
+	@Override
+	public String toString() {
+
+	}
+
+	// Expands the size of the stack
+	private void expandCapacity() {
+
+	}
+
+}

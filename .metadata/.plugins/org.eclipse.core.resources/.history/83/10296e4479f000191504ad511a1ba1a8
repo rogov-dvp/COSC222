@@ -1,0 +1,53 @@
+package question2;
+
+public class Node<T> {
+
+	private String name;
+	private String author;
+	private double price; 			//double since test class uses double values
+	private Node<T> link;
+
+	public Node(String name, String author, double price) {
+		setName(name);
+		setAuthor(author);
+		setPrice(price);
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getAuthor() {
+		return author;
+	}
+
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	public Node<T> getNext() {
+		return link;
+	}
+
+	public String toString() {
+		return name + ", " + author + ", " + price;
+	}
+}

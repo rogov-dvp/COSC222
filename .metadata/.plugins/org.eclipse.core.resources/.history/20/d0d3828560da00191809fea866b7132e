@@ -1,0 +1,16 @@
+package lab1;
+
+import java.util.Scanner;
+
+public class PhoneBook {
+	public static void main(String[] args) {
+		String name = "";
+		String phoneNum = "";
+		Scanner in = new Scanner(System.in);
+		String userPhone = in.nextLine();
+		
+		
+		
+		System.out.println("<name>"+ name +"</name>" + "<phone>" + phoneNum + "</phone>");
+	}
+}

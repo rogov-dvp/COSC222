@@ -1,0 +1,10 @@
+package bST;
+
+public class BST {
+	private Node root;
+	
+	
+	
+	
+	
+}
